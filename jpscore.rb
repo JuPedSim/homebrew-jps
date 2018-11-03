@@ -1,4 +1,4 @@
-class Jpseditor < Formula
+class Jpscore < Formula
   desc "Core simulation module for JuPedSim"
   homepage "https://www.jupedsim.org/"
 

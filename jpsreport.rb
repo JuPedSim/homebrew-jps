@@ -1,8 +1,8 @@
-class Jpseditor < Formula
-  desc "A graphical user interface to create the geometry of a scenario simulated by JuPedSim"
+class Jpsreport < Formula
+  desc "Analysis module for JuPedSim"
   homepage "https://www.jupedsim.org/"
 
-  head "https://github.com/JuPedSim/jpseditor.git"
+  head "https://github.com/JuPedSim/jpsreport.git"
 
   depends_on "qt"
 
@@ -12,7 +12,7 @@ class Jpseditor < Formula
     Dir.chdir "build"
     system "qmake", ".."
     system "make", "install"
-    system("cp /tmp/jpseditor/JPSeditor.app/Contents/MacOS/JPSeditor /usr/local/bin")
+    # system("cp /tmp/jpseditor/JPSeditor.app/Contents/MacOS/JPSeditor /usr/local/bin")
     puts ""
     puts "------------------------------------"
     puts "JPSeditor installed in /usr/local/bin/jpseditor"

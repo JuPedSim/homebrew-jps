@@ -1,4 +1,4 @@
-class Jpseditor < Formula
+class Jpsvis < Formula
   desc "Visualisation module for JuPedSim"
   homepage "https://www.jupedsim.org/"
 
@@ -14,7 +14,7 @@ class Jpseditor < Formula
     Dir.chdir "build"
     system "cmake", ".."
     system "make", "install"
-    system("cp /tmp/jpsvis.app/Contents/MacOS/jpsvis /usr/local/bin")
+    system("cp /tmp/JPSvis.app/Contents/MacOS/jpsvis /usr/local/bin")
     puts ""
     puts "------------------------------------"
     puts "JPSvis installed in /usr/local/bin/jpsvis"
