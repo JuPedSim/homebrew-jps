@@ -14,10 +14,10 @@ class Jpsvis < Formula
     Dir.chdir "build"
     system "cmake", ".."
     system "make", "install"
-    system("cp /tmp/JPSvis.app/Contents/MacOS/jpsvis /usr/local/bin")
+    system("cp /tmp/jpsvis.app/Contents/MacOS/jpsvis /usr/local/bin/")
     puts ""
     puts "------------------------------------"
-    puts "JPSvis installed in /usr/local/bin/jpsvis"
+    puts "jpsvis installed in /usr/local/bin/jpsvis"
     puts "------------------------------------"
   end
 end

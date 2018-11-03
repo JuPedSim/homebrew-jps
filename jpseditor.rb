@@ -12,7 +12,7 @@ class Jpseditor < Formula
     Dir.chdir "build"
     system "qmake", ".."
     system "make", "install"
-    system("cp /tmp/JPSeditor.app/Contents/MacOS/JPSeditor /usr/local/bin")
+    system("cp /tmp/JPSeditor.app/Contents/MacOS/JPSeditor /usr/local/bin/jpseditor-0.8.4")
     puts ""
     puts "------------------------------------"
     puts "JPSeditor installed in /usr/local/bin/jpseditor"

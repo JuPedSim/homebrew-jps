@@ -5,6 +5,7 @@ class Jpsreport < Formula
   head "https://github.com/JuPedSim/jpsreport.git"
 
   depends_on "qt"
+  depends_on "boost"
 
   def install
     Dir.pwd
