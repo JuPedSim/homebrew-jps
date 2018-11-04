@@ -2,7 +2,7 @@ class Jpscore < Formula
   desc "Core simulation module for JuPedSim"
   homepage "https://www.jupedsim.org/"
 
-  head "https://github.com/JuPedSim/jpscore.git"
+  head "https://github.com/chraibi/jpscore.git"
   # options
   # AIROUTER --> CGAL
   # JPSFIRE --> ZLIB
@@ -17,6 +17,7 @@ class Jpscore < Formula
     Dir.mkdir "build"
     Dir.chdir "build"
     system "cmake", ".."
-    system "make", "install"
+    system "make"
+    bin.install "jpscore"
   end
 end
