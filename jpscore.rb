@@ -2,7 +2,7 @@ class Jpscore < Formula
   desc "Core simulation module for JuPedSim"
   homepage "https://www.jupedsim.org/"
 
-  head "https://github.com/chraibi/jpscore.git"
+  head "https://github.com/JuPedSim/jpscore.git"
   # options
   # AIROUTER --> CGAL
   # JPSFIRE --> ZLIB
