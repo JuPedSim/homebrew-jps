@@ -16,7 +16,7 @@ class Jpscore < Formula
     Dir.pwd
     Dir.mkdir "build"
     Dir.chdir "build"
-    system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release"
+    system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
     system "make"
     bin.install "jpscore"
   end
