@@ -12,7 +12,10 @@ class Jpsreport < Formula
     Dir.chdir "build"
     system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
     system "make", "install"
-    #bin.install "jpsreport"
+    bin.install "jpsreport"
+    ("Release"/"demos").install Dir["demos/*"]
+    ("Release"/"scripts").install Dir["scripts/*"]
+
     puts ""
     puts "-------------------------------------"
     puts "installed in /usr/local/bin/jpsreport"
