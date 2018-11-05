@@ -16,11 +16,12 @@ class Jpsreport < Formula
     system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
     system "make", "install"
     bin.install "jpsreport"
-    bin.install Dir["scripts/*"]
+    bin.install Dir["#{buildpath}/Release/scripts/*"]
     if build.with? "demos"
-      bin.install Dir["demos/*"]
+      bin.install Dir["#{buildpath}/Release/demos/*"]
     end
     puts "prefix: #{prefix}"
+    puts "build: #{buildpath}"
     puts ""
     puts "-------------------------------------"
     puts "installed in /usr/local/bin/jpsreport"
