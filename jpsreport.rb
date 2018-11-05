@@ -3,20 +3,19 @@ class Jpsreport < Formula
   homepage "https://www.jupedsim.org/"
 
   head "https://github.com/JuPedSim/jpsreport.git"
-
-  depends_on "qt"
+  depends_on "cmake" => :build
   depends_on "boost"
 
   def install
     Dir.pwd
     Dir.mkdir "build"
     Dir.chdir "build"
-    system "qmake", ".."
-    system "make", "install"
-    # system("cp /tmp/jpseditor/JPSeditor.app/Contents/MacOS/JPSeditor /usr/local/bin")
+    system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
+    system "make"
+    bin.install "jpsreport"
     puts ""
-    puts "------------------------------------"
-    puts "JPSeditor installed in /usr/local/bin/jpseditor"
-    puts "------------------------------------"
+    puts "-------------------------------------"
+    puts "installed in /usr/local/bin/jpsreport"
+    puts "-------------------------------------"
   end
 end
