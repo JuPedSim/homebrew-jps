@@ -1,8 +1,11 @@
 class Jpsreport < Formula
   desc "Analysis module for JuPedSim"
   homepage "https://www.jupedsim.org/"
+  version "0.8.3"
 
   head "https://github.com/JuPedSim/jpsreport.git"
+
+  option "with-demos", "Add demo files"
   depends_on "cmake" => :build
   depends_on "boost"
 
@@ -13,9 +16,11 @@ class Jpsreport < Formula
     system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
     system "make", "install"
     bin.install "jpsreport"
-    #("Release"/"demos").install Dir["demos/*"]
-    bin.install Dir["Release/scripts/*"]
-
+    bin.install Dir["scripts/*"]
+    if build.with? "demos"
+      bin.install Dir["demos/*"]
+    end
+    puts "prefix: #{prefix}"
     puts ""
     puts "-------------------------------------"
     puts "installed in /usr/local/bin/jpsreport"
