@@ -11,7 +11,7 @@ class Jpsreport < Formula
     Dir.mkdir "build"
     Dir.chdir "build"
     system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
-    system "make"
+    system "make", "install"
     bin.install "jpsreport"
     puts ""
     puts "-------------------------------------"
