@@ -13,8 +13,8 @@ class Jpsreport < Formula
     system "cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
     system "make", "install"
     bin.install "jpsreport"
-    ("Release"/"demos").install Dir["demos/*"]
-    ("Release"/"scripts").install Dir["scripts/*"]
+    #("Release"/"demos").install Dir["demos/*"]
+    bin.install Dir["Release/scripts/*"]
 
     puts ""
     puts "-------------------------------------"
