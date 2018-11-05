@@ -12,9 +12,17 @@ brew tap JuPedSim/jps
 brew install --HEAD pkg
 ```
 
-with `pkg` is one of the availaible modules:
+with `pkg` is one of the available modules:
 
 - jpseditor
 - jpscore
 - jpsreport
 - jpsvis
+
+----
+
+Note:
+
+- HEAD only formula based on GitHub's master branch.
+- `jpseditor` and `jpsvis` are installed in `/tmp`
+- `jpscore` and `jpsreport` in `/usr/local/bin`
