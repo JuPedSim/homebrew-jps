@@ -19,12 +19,14 @@ class Jpsreport < Formula
     bin.install Dir["#{buildpath}/Release/scripts"]
     if build.with? "demos"
       bin.install Dir["#{buildpath}/Release/demos"]
+      doc.install "README", "CHANGELOG.md", "LICENSE"
+      ohai "demos is: #{buildpath}/Release/demos"
+      ohai "Additional helper scripts are installed in #{pkgshare}"
     end
-    puts "prefix: #{prefix}"
-    puts "build: #{buildpath}"
-    puts ""
-    puts "-------------------------------------"
-    puts "installed in /usr/local/bin/jpsreport"
-    puts "-------------------------------------"
   end
+
+  test do
+    assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
+  end
+
 end
