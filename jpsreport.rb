@@ -30,8 +30,9 @@ class Jpsreport < Formula
     last_release="0.8.3"
     #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
     test_version=shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
-    ohai "expected version: <#{last_release}>"
-    ohai "got: <#{test_version}>"
+    ohai "checking version:"
+    ohai " expected: <#{last_release}>"
+    ohai " got: <#{test_version}>"
     assert_match last_release, test_version
   end
 
