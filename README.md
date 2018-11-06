@@ -14,10 +14,10 @@ brew tap JuPedSim/jps
 First check the dependencies of the packages you want to install
 
 ```shell
-brew info pkg
+brew info <pkg>
 ```
 
-with `pkg` is one of the available modules:
+with `<pkg>` is one of the available modules:
 
 - `jpseditor`: geometry editor
 - `jpscore`: simulation
