@@ -29,13 +29,13 @@ with `pkg` is one of the available modules:
 then install with
 
 ```shell
-brew install --HEAD pkg
+brew install --HEAD <pkg>
 ```
 
 ## (optional) Test module
 
 ```shell
-brew test --HEAD pkg
+brew test  <pkg>
 ```
 
 ## Update module
@@ -43,13 +43,13 @@ brew test --HEAD pkg
 To update the installed packages use
 
 ```shell
-brew upgrade pkg
+brew upgrade <pkg>
 ```
 
 or reinstall it with
 
 ```shell
-brew reinstall pkg
+brew reinstall <pkg>
 ```
 
 ----
