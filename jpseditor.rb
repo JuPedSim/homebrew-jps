@@ -7,13 +7,10 @@ class Jpseditor < Formula
   depends_on "qt"
 
   def install
-    Dir.pwd
-    Dir.mkdir "build"
-    Dir.chdir "build"
-    system "qmake", ".."
+    system "qmake", "."
     system "make", "install"
-    bin.install "#{prefix}/JPSeditor.app/Contents/MacOS/JPSeditor"
-    prefix.install "#{prefix}/JPSeditor.app"
+    bin.install "#{buildpath}/release/JPSeditor.app/Contents/MacOS/JPSeditor"
+    prefix.install "#{buildpath}/release/JPSeditor.app"
     ohai "jpseditor install in #{prefix}/JPSeditor.app"
     ohai ".. and linked to #{bin}"
   end
