@@ -38,11 +38,23 @@ class Jpscore < Formula
     system "cmake", "..", *args
     system "make"
     bin.install "jpscore"
-
+    doc.install "../README.md", "../CHANGELOG.md", "../LICENSE"
+    ohai "jpscore installed in #{bin}"
     if build.with? "demos"
-      bin.install Dir["#{buildpath}/demos"]
-      ohai "demos in: #{buildpath}/demos"
+      doc.install Dir["#{buildpath}/demos"]
+      ohai "Additional demo files are installed in #{doc}"
     end
 
   end
+
+  test do
+    last_release="0.8.3"
+    #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
+    test_version=shell_output("jpsrcore 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
+    ohai "checking version:"
+    ohai "- expected: <#{last_release}>"
+    ohai "- got: <#{test_version}>"
+    assert_match last_release, test_version
+  end
+
 end

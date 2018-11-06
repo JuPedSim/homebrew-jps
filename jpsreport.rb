@@ -18,10 +18,10 @@ class Jpsreport < Formula
     system "make", "install"
     bin.install "jpsreport"
     bin.install Dir["#{buildpath}/Release/scripts"]
+    doc.install "../README.md", "../CHANGELOG.md", "../LICENSE"
+    ohai "jpsreport along with helper scripts are installed in #{bin}"
     if build.with? "demos"
       doc.install Dir["#{buildpath}/Release/demos"]
-      doc.install "../README.md", "../CHANGELOG.md", "../LICENSE"
-      ohai "jpsreport along with helper scripts are installed in #{bin}"
       ohai "Additional demo files are installed in #{doc}"
     end
   end
