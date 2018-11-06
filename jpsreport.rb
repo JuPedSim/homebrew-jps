@@ -1,7 +1,7 @@
 class Jpsreport < Formula
   desc "Analysis module for JuPedSim"
   homepage "https://www.jupedsim.org/"
-  jpsreport_version "0.8.3"
+  version 0.8.3
 
   head "https://github.com/JuPedSim/jpsreport.git"
 
@@ -28,9 +28,10 @@ class Jpsreport < Formula
   end
 
   test do
+
     #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
-    testVersion=shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
-    ohai "expected version: <#{jps_version}>"
+    test_version=shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
+    ohai "expected version: <#{version}.to_s>"
     ohai "got: <#{testVersion}>"
     assert_match version, test_version
   end
