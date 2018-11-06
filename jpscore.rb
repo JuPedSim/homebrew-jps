@@ -30,7 +30,7 @@ class Jpscore < Formula
     end
     if build.with? "tests"
       args << "-DBUILD_TESTING=ON"
-      atgs << "-DBUILD_CPPUNIT_TEST=ON"
+      args << "-DBUILD_CPPUNIT_TEST=ON"
     end
 
     Dir.mkdir "build"
