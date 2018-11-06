@@ -18,8 +18,8 @@ class Jpscore < Formula
 
   def install
     args = std_cmake_args + %W[
-           "-DCMAKE_BUILD_TYPE=Release"
-           "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=."
+           -DCMAKE_BUILD_TYPE=Release
+           -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=.
     ]
 
     if build.with? "jpsfire"
