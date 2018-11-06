@@ -6,10 +6,12 @@ homebrew formula for JuPedSim
 brew tap JuPedSim/jps
 ```
 
-## Install module
+## Install modules
+
+First check the dependencies of the packages you want to install
 
 ```shell
-brew install --HEAD pkg
+brew info pkg
 ```
 
 with `pkg` is one of the available modules:
@@ -18,6 +20,19 @@ with `pkg` is one of the available modules:
 - jpscore
 - jpsreport
 - jpsvis
+
+
+then install with
+
+```shell
+brew install --HEAD pkg
+```
+
+To update the installed packages use
+
+```shell
+brew reinstall pkg
+```
 
 ----
 
