@@ -21,7 +21,7 @@ class Jpsreport < Formula
     bin.install Dir["#{buildpath}/Release/scripts"]
     if build.with? "demos"
       bin.install Dir["#{buildpath}/Release/demos"]
-      doc.install "README", "CHANGELOG.md", "LICENSE"
+      doc.install "../README.md", "../CHANGELOG.md", "../LICENSE"
       ohai "demos is: #{buildpath}/Release/demos"
       ohai "Additional helper scripts are installed in #{pkgshare}"
     end
