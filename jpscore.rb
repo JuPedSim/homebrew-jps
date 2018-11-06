@@ -26,7 +26,7 @@ class Jpscore < Formula
       args <<  "-DJPSFIRE=true"
     end
     if build.with? "airouter"
-      args << "-DAIROUTER=true",
+      args << "-DAIROUTER=true"
     end
     if build.with? "tests"
       args << "-DBUILD_TESTING=ON"
