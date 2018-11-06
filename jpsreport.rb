@@ -8,6 +8,8 @@ class Jpsreport < Formula
   option "with-demos", "Add demo files"
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "python" => :optional
+ # polygons too, but there is no formula for that
 
   def install
     Dir.pwd
