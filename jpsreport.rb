@@ -29,7 +29,10 @@ class Jpsreport < Formula
 
   test do
     #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
-      assert_match version.to_s, shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
+    testVersion=shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
+    ohai "expected version: <#{version}>"
+    ohai "got: <#{testVersion}>"
+    assert_match version, test_version
   end
 
 end
