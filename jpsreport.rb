@@ -1,7 +1,6 @@
 class Jpsreport < Formula
   desc "Analysis module for JuPedSim"
   homepage "https://www.jupedsim.org/"
-  version 0.8.3
 
   head "https://github.com/JuPedSim/jpsreport.git"
 
@@ -10,6 +9,7 @@ class Jpsreport < Formula
   depends_on "boost"
   depends_on "python" => :optional
  # polygons too, but there is no formula for that
+  version "0.8.3"
 
   def install
     Dir.pwd
@@ -31,7 +31,7 @@ class Jpsreport < Formula
 
     #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
     test_version=shell_output("jpsreport 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
-    ohai "expected version: <#{version}.to_s>"
+    ohai "expected version: <#{version}>"
     ohai "got: <#{testVersion}>"
     assert_match version, test_version
   end
