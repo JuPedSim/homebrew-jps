@@ -28,7 +28,8 @@ class Jpsreport < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
+    #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
+      assert_match version.to_s, shell_output("jpsreport  | awk -F "Version        :" '{print $2}'")
   end
 
 end
