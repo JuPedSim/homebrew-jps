@@ -12,14 +12,9 @@ class Jpseditor < Formula
     Dir.chdir "build"
     system "qmake", ".."
     system "make", "install"
-    puts "prefix: #{prefix}"
-    puts "prefix: #{buildpath}"
-    puts "prefix: #{bin}"
-    bin.install "/tmp/jpseditor/JPSeditor.app/Contents/MacOS/JPSeditor"
-    prefix.install "/tmp/jpseditor/JPSeditor.app"
-    puts ""
-    puts "------------------------------------"
-    puts "JPSeditor installed in /usr/local/bin/jpseditor"
-    puts "------------------------------------"
+    bin.install "#{prefix}/JPSeditor.app/Contents/MacOS/JPSeditor"
+    prefix.install "#{prefix}/JPSeditor.app"
+    ohai "jpseditor install in #{prefix}/JPSeditor.app"
+    ohai ".. and linked to #{bin}"
   end
 end
