@@ -11,15 +11,12 @@ class Jpsvis < Formula
   depends_on "vtk"
 
   def install
-    ohai "#{prefix}"
-    ohai "#{bin}"
-    ohai "#{buildpath}"
     Dir.mkdir "build"
     Dir.chdir "build"
     system "cmake", ".."
     system "make", "install"
-    bin.install "#{prefix}/jpsvis.app/Contents/MacOS/jpsvis"
-    prefix.install "#{prefix}/jpsvis.app"
+    bin.install "#{buildpath}/bin/jpsvis.app/Contents/MacOS/jpsvis"
+    prefix.install "#{buildpath}/bin/jpsvis.app"
     ohai "jpsvis install in #{prefix}/jpsvis.app"
     ohai ".. and linked to #{bin}"
     if build.with? "demos"
