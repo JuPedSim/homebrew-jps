@@ -14,7 +14,7 @@ class Jpscore < Formula
   depends_on "zlib" if build.with? "jpsfire"
   depends_on "cgal" if build.with? "airouter"
 
-  needs :cxx11
+
 
   def install
     args = std_cmake_args + %W[
