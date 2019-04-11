@@ -32,6 +32,19 @@ then install with
 brew install --HEAD <pkg>
 ```
 
+**Note**: In case you have brew permission problems, you may want to run the following:
+
+```shell
+sudo chown -R "$USER":admin /usr/local
+```
+
+Also you'll (most probably) have to do the same on /Library/Caches/Homebrew:
+```shell
+sudo chown -R "$USER":admin /Library/Caches/Homebrew
+```
+
+See also this [answer](https://stackoverflow.com/a/16450503/9601068) to this [issue](https://github.com/mxcl/homebrew/issues/19670).
+
 ## (optional) Test module
 
 ```shell
