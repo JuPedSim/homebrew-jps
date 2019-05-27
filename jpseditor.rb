@@ -8,6 +8,7 @@ class Jpseditor < Formula
   depends_on "qt"
 
   def install
+    ohai "mkdir build"
     Dir.mkdir "build"
     Dir.chdir "build"
     system "cmake", ".."
