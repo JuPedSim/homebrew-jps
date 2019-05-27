@@ -10,7 +10,8 @@ class Jpseditor < Formula
   depends_on "qt"
 
   def install
-    ohai "start compilation
+    system "false"
+    ohai "start compilation"
     Dir.mkdir "build"
     ohai "Change to build"
     Dir.chdir "build"
