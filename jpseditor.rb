@@ -5,11 +5,14 @@ class Jpseditor < Formula
   head "https://github.com/JuPedSim/jpseditor.git"
 
   option "with-demos", "Add demo files"
+
+  depends_on "cmake" => :build
   depends_on "qt"
 
   def install
-    ohai "start compilation"
+    ohai "start compilation
     Dir.mkdir "build"
+    ohai "Change to build"
     Dir.chdir "build"
     system "cmake", ".."
     system "make", "install"
