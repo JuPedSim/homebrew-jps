@@ -20,6 +20,7 @@ class Jpscore < Formula
     args = std_cmake_args + %W[
            -DCMAKE_BUILD_TYPE=Release
            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=.
+           -DCMAKE_PREFIX_PATH=$(pwd)/deps
     ]
 
     if build.with? "jpsfire"
@@ -35,6 +36,7 @@ class Jpscore < Formula
 
     Dir.mkdir "build"
     Dir.chdir "build"
+    system "../scripts/setup-deps.sh"
     system "cmake", "..", *args
     system "make"
     # todo fix this
