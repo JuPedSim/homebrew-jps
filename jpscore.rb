@@ -39,8 +39,7 @@ class Jpscore < Formula
 
   test do
     last_release="0.8.4"
-    #assert_match version.to_s, shell_output("jpsreport -v 2>/dev/null")
-    test_version=shell_output("../bin/jpsrcore 2>/dev/null | grep Version | awk -F: '{ print $2 }' |  tr -d '[[:space:]]'")
+    test_version=shell_output("jpscore 2>/dev/null | grep Version | awk  '{ print $5 }' |  tr -d '[[:space:]]'")
     ohai "checking version:"
     ohai "- expected: <#{last_release}>"
     ohai "- got: <#{test_version}>"
