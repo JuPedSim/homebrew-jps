@@ -1,4 +1,4 @@
-class Myjpscore < Formula
+class Jpscore < Formula
   desc "Core simulation module for JuPedSim"
   homepage "https://www.jupedsim.org/"
   license "LGPL-3.0-or-later"
