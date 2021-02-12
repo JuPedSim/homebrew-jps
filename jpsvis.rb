@@ -8,7 +8,7 @@ class Jpsvis < Formula
 
   depends_on "cmake" => :build
   depends_on "qt"
-  depends_on "vtk"
+  depends_on "vtk@8.2"
 
   def install
     Dir.mkdir "build"
