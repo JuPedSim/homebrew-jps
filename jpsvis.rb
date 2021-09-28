@@ -7,8 +7,8 @@ class Jpsvis < Formula
   option "with-demos", "Add demo files"
 
   depends_on "cmake" => :build
-  depends_on "qt"
-  depends_on "vtk@8.2"
+  depends_on "qt@5"
+  depends_on "vtk@9"
 
   def install
     Dir.mkdir "build"
