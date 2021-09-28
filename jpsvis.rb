@@ -14,6 +14,7 @@ class Jpsvis < Formula
     Dir.mkdir "build"
     Dir.chdir "build"
     system "cmake", ".."
+    system "cmake --build . --target jpsvis"
     system "make", "install"
     bin.install "#{buildpath}/bin/jpsvis.app/Contents/MacOS/jpsvis"
     prefix.install "#{buildpath}/bin/jpsvis.app"
