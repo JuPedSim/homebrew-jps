@@ -1,13 +1,13 @@
-class Jpscore < Formula
-  desc "Core simulation module for JuPedSim"
+class Jupedsim < Formula
+  desc "Pedestrian motion simulator and visualisation tool"
   homepage "https://www.jupedsim.org/"
   license "LGPL-3.0-or-later"
-  
+
   stable do
     url "https://github.com/JuPedSim/jpscore.git",
       using:    :git,
-      tag:      "v0.9.0",
-      revision: "33443b1caeb9be0c852b78f449b9425816b957fb"
+      tag:      "v0.9.1",
+      revision: "c5e67e288c0e7a750068aaa618388323bf69f413"
     option "with-demos", "Add demo files"
     depends_on "boost" => :build
     depends_on "cli11" => :build
@@ -16,6 +16,9 @@ class Jpscore < Formula
     depends_on "git" => :build
     depends_on "ninja" => :build
     depends_on "spdlog" => :build
+    depends_on "glm"
+    depends_on "qt@5"
+    depends_on "vtk"
   end
 
   head do
@@ -28,6 +31,9 @@ class Jpscore < Formula
     depends_on "ninja" => :build
     depends_on "rust" => :build
     depends_on "spdlog" => :build
+    depends_on "glm"
+    depends_on "qt@5"
+    depends_on "vtk"
   end
 
   def install
@@ -42,12 +48,12 @@ class Jpscore < Formula
     system "cmake", "..", *args
     system "ninja"
     # move executables to the bin directory of the formula
-    bin.install "bin/jpscore"
+    bin.install "bin/jpscore", "bin/jpsvis.app/Contents/MacOS/jpsvis"
     doc.install "../README.md", "../LICENSE"
     ohai "jpscore installed in #{bin}"
     if build.with? "demos"
-      doc.install Dir["#{buildpath}/demos"]
-      ohai "Additional demo files are installed in #{doc}"
+      doc.install Dir["#{buildpath}/examples"]
+      ohai "Additional example files are installed in #{doc}"
     end
   end
 
