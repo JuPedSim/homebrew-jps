@@ -10,27 +10,26 @@ brew tap JuPedSim/jps
 
 After tapping `JuPedSim/jps` you will have the following formulas available
 
+- `jupedsim`: simulation & visualisation
 - `jpseditor`: geometry editor
-- `jpscore`: simulation
 - `jpsreport`: analysis
-- `jpsvis`: visualisation
 
-## Install jpscore
+## Install jupedsim
 
-You can install jpscore either the latest release with
+You can install jupedsim either the latest release with
 
 ```shell
-brew install jpscore
+brew install jupedsim
 ```
 
 or alternatively you can install the latest build from master (not
 recommended), with
 
 ```shell
-brew install --HEAD jpscore
+brew install --HEAD jupedsim
 ```
 
-## Installation of jpsvis / jpsreport / jpseditor
+## Installation of jpsreport / jpseditor
 
 These modules only support installation from the latest changes on master,
 hence you need to install with
